@@ -7,6 +7,8 @@ import {
 import './Header.css'
 import useAuth from '../../hooks/useAuth'
 import logo from '../../img/medical-logo-removebg-preview.png'
+import { HashLink } from 'react-router-hash-link';
+
 
 
 
@@ -22,14 +24,14 @@ const Header = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              <Link  to="/home" className='nav-item'>Home</Link>
-              <Link to="/about" className='nav-item'>About us</Link>
-              <Link to="/home#doctor" className='nav-item'>Doctor</Link>
-              <Link to="/contact" className='nav-item'>Contact us</Link>
-              
+              <Link to="/home" className='nav-item'>Home</Link>
+              <Link as={HashLink} to="/about" className='nav-item'>About us</Link>
+              <HashLink to="/home#doctor" className='nav-item'>Doctor</HashLink>
+              <Link as={HashLink} to="/contact" className='nav-item'>Contact us</Link>
+
               {user?.displayName ?
                 <Button onClick={logOut} variant="dark" className='nav-item text-light'>logOut</Button> :
-                <Link to="/login"  className='nav-item'>LogIn</Link>}
+                <Link to="/login" className='nav-item'>LogIn</Link>}
             </Nav>
           </Navbar.Collapse>
         </Container>
