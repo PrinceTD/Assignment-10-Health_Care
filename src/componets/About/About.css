@@ -1,0 +1,14 @@
+.About{
+    background-image: url(../../img/dna-3539309__480.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 150px;
+}
+.About{
+    font-size: 100px;
+    color: indianred;
+    font-weight: 700;
+}
+.about-us{
+    color: rgb(65, 63, 63);
+}
