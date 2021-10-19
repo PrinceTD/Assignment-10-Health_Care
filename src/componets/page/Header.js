@@ -9,6 +9,7 @@ import useAuth from '../../hooks/useAuth'
 import logo from '../../img/medical-logo-removebg-preview.png'
 
 
+
 const Header = () => {
   const { user, logOut } = useAuth()
   return (
@@ -21,7 +22,7 @@ const Header = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              <Link to="/home" className='nav-item'>Home</Link>
+              <Link  to="/home" className='nav-item'>Home</Link>
               <Link to="/about" className='nav-item'>About us</Link>
               <Link to="/home#doctor" className='nav-item'>Doctor</Link>
               <Link to="/contact" className='nav-item'>Contact us</Link>
