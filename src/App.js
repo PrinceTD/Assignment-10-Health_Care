@@ -18,6 +18,7 @@ import Login from './componets/LogIn/Login';
 import AuthProvider from './contexts/AuthProvider';
 import PrivetRoute from './componets/LogIn/PrivetRoute';
 import Register from './componets/Register/Register';
+import Doctor from './componets/Doctor/Doctor';
 
 
 function App() {
@@ -35,8 +36,11 @@ function App() {
             <Route path='/about'>
               <About></About>
             </Route>
-            <Route path='/contact'>
+            <PrivetRoute path='/contact'>
               <Contact></Contact>
+            </PrivetRoute>
+            <Route path='/doctor'>
+             <Doctor></Doctor>
             </Route>
             <PrivetRoute path='/booking/:serviceId'>
               <SingleService></SingleService>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from '../page/Header';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification } from '@firebase/auth';
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification, updateProfile } from '@firebase/auth';
 import { Link } from 'react-router-dom';
 
 
@@ -9,9 +9,13 @@ const Register = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState('');
+    const [name, setName] = useState('');
     const [isLogin, setIsLogin] = useState(false);
     const auth = getAuth();
 
+    const handelName = e => {
+        setName(e.target.value)
+    }
     const handelEmail = e => {
         setEmail(e.target.value)
     }
@@ -32,14 +36,14 @@ const Register = () => {
     }
     const processLogin = (email, password) => {
         signInWithEmailAndPassword(auth, email, password)
-        .then(result =>{
-            const user = result.user;
-            console.log(user);
-            setError('')
-        })
-        .catch(error=>{
-            setError(error.massage)
-        })
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                setError('')
+            })
+            .catch(error => {
+                setError(error.massage)
+            })
 
     }
 
@@ -49,38 +53,54 @@ const Register = () => {
                 const user = result.user
                 console.log(user)
                 setError('');
+                setUserName()
                 verifyEmail();
             })
             .catch((error) => {
                 setError(error.message);
             });
     }
-    const verifyEmail = ()=>{
+    const setUserName = () => {
+        updateProfile(auth.currentUser, { displayName: name })
+            .then(result => {
+
+            })
+    }
+    const verifyEmail = () => {
         sendEmailVerification(auth.currentUser)
-        .then(result =>{
-            console.log(result)
-        })
+            .then(result => {
+                console.log(result)
+            })
     }
 
     return (
-        <div className='text-center'>
+        <div className=''>
             <Header></Header>
-            <h3>Please {isLogin ? 'logIn' : "Register"}</h3>
-            <form onSubmit={handelRegister}>
-                <label htmlFor="email">Email:</label>
-                <input onChange={handelEmail} type="email" name="email" id="" required />
-                <br />
-                <label htmlFor="password">Password</label>
-                <input onChange={handelPassword} type="password" name="password" id="" required />
-                <br />
-                <div className="text-danger">{error}</div>
-                <div>
-                    <p><input onChange={toggleLogin} type="checkbox" name="" id="" />Are u Already Register</p>
-                </div>
+            <div className='text-center m-5 p-5 bg-light '>
+                <h3>Please {isLogin ? 'logIn' : "Register"}</h3>
+                <form action="onSubmit={handelRegister}">
+                    {!isLogin && <div className='pb-3'> 
+                        <input className='border-top-0 pe-4 ps-4 pt-2 pb-2  bg-light rounded' onChange={handelName} type="text" name="name" id="" placeholder="Your Name"  required/>
+                    </div>}
+                    <div className='pb-3'>
+                        <input className='border-top-0 pe-4 ps-4 pt-2 pb-2  bg-light rounded' onChange={handelEmail} type="email" name="email" id="" placeholder='Your email'  required/>
+                    </div>
+                    <div  className='pb-3'>
+                        <input className='border-top-0 pe-4 ps-4 pt-2 pb-2  bg-light rounded'  onChange={handelPassword} type="password" name="password" id="" placeholder="Your Password" required/>
+                        <br />
+                        <span id="passwordHelpInline" class="form-text">
+                           
+                        </span>
+                    </div>
 
-                <button>{isLogin ? 'Login' : 'Register'}</button>
-
-            </form>
+                    <div className="text-danger">{error}
+                    </div>
+                    <p><input onChange={toggleLogin} type="checkbox" name="" id="" />Already Register</p>
+                    <button className="bg-danger pe-4 ps-4 border-0 rounded" onClick={handelRegister}>{isLogin ? 'Login' : 'Register'}</button>
+                    
+                </form>
+               
+            </div>
         </div>
     );
 };

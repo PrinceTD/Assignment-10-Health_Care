@@ -4,32 +4,31 @@ import { Navbar, Container, Nav, Button } from 'react-bootstrap';
 import {
   Link
 } from "react-router-dom"
+import './Header.css'
 import useAuth from '../../hooks/useAuth'
-
+import logo from '../../img/medical-logo-removebg-preview.png'
 
 
 const Header = () => {
   const { user, logOut } = useAuth()
   return (
     <div>
-      <Navbar bg="" expand="lg">
+      <Navbar bg="primary" expand="lg">
         <Container>
-          <Navbar.Brand to="/home">React-Bootstrap</Navbar.Brand>
+          <Navbar.Brand to="/home">
+            <img src={logo} alt="" height='50px' />
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              <Link to="/home">Home</Link>
-              <Link to="/about">About us</Link>
-              <Link to="/contact">Contact us</Link>
-              {user?.email ?
-                <Button onClick={logOut} variant="dark">logOut</Button> :
-                <Link to="/login">LogIn</Link>}
-
-            
-              <Navbar.Text>
-                sign in as: <a href="#login">{user?.displayName}</a>
-              </Navbar.Text>
-
+              <Link to="/home" className='nav-item'>Home</Link>
+              <Link to="/about" className='nav-item'>About us</Link>
+              <Link to="/home#doctor" className='nav-item'>Doctor</Link>
+              <Link to="/contact" className='nav-item'>Contact us</Link>
+              
+              {user?.displayName ?
+                <Button onClick={logOut} variant="dark" className='nav-item text-light'>logOut</Button> :
+                <Link to="/login"  className='nav-item'>LogIn</Link>}
             </Nav>
           </Navbar.Collapse>
         </Container>
