@@ -20,6 +20,9 @@ const Header = () => {
         <Container>
           <Navbar.Brand to="/home">
             <img src={logo} alt="" height='50px' />
+            <span>
+            <strong className='text-danger'>HEALTH</strong>
+            </span>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
