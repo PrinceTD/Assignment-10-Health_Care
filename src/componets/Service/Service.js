@@ -10,14 +10,14 @@ const Service = () => {
             .then(data => setService(data))
     }, [])
     return (
-        <div id='service' className='container '>
-            <div className='row mt-5'>
+        <div id='service' className='container pt-5'>
+            <div className='row mt-5 pt-3'>
                 <div className="text-center">
                    <div>
                    <h4 className='text-info'>SERVICES</h4>
                     <h2 className='pt-3'>Our Department</h2>
                     
-                    <p>
+                    <p className='text-secondary'>
                         While mirth large of on front. Ye he greater related adapted proceed entered an. Through it  <br />examine express promise no. Past add size game cold girl off how old
                     </p>
                    </div>

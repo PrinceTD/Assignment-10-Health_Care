@@ -9,10 +9,10 @@ const Services = (props) => {
             <div>
                 <div className="col">
                     <div className="card h-100 border-0 shadow">
-                    <img className='d-flex justify-content-center' src={img} alt=""  height='240px'/>
+                    <img className='d-flex justify-content-center p-2' src={img} alt=""  height='240px'/>
                         <div className="card-body">
                             <h5 className="card-title ps-3 text-info fw-bold">{name}</h5>
-                            <p className="card-text p-3">{title.slice(0, 150)}...</p>
+                            <p className="card-text p-3 text-secondary">{title.slice(0, 150)}...</p>
                         </div>
                         <div className='ps-3 pb-3'>
                         <Link to={`/booking/:${id}`}>

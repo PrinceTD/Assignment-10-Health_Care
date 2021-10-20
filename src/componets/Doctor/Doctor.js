@@ -11,11 +11,11 @@ const Doctor = () => {
             .then(data => setData(data))
     }, [])
     return (
-        <div id='doctor' className="container mb-5">
+        <div id='doctor' className="container mb-5 pt-5 pb-5">
             <div className="text-center mt-5">
                 <h4 className="text-info">DOCTORS</h4>
-                <h2>Meet Our Experts</h2>
-                <p>Line by line contract review and editing by nation's best healthcare attorneys. Order Online. No Hidden Costs. <br />  Flat Fee Contract Review, Expedited Review Options, Satisfaction Guaranteed</p>
+                <h2 className='text-dark'>Meet Our Experts</h2>
+                <p className='text-secondary'> Line by line contract review and editing by nation's best healthcare attorneys. Order Online. No Hidden Costs. <br />  Flat Fee Contract Review, Expedited Review Options, Satisfaction Guaranteed</p>
             </div>
             <div class="row row-cols-1 row-cols-md-4 g-4 mb-3 border-0">
             {

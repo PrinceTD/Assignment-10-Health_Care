@@ -12,14 +12,16 @@ const NewBanner = () => {
                     <div className="col-md-5 pt-5 mt-5 ps-4">
                         <p className="fs-1">
                             We are providing <br />
-                            <strong>Best Medical Services</strong>
+                            <strong className='text-info'>Best Medical Services</strong>
                         </p>
-                        <p>
+                        <p className='text-secondary'>
                             Contented continued any happiness instantly objection yet her allowance. Use correct day new brought tedious decay begin which.
+
                         </p>
+
                     </div>
-                    <div className="col-md-7 ps-5 text-center">
-                        <img src={banner} alt="" height="430px" width='400px' />
+                    <div className="col-md-7 text-center">
+                        <img src={banner} alt="" height="380px" width='320px' />
                     </div>
                 </div>
             </div>
