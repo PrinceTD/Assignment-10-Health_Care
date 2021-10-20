@@ -6,13 +6,13 @@ const Services = (props) => {
     const {id, name, img, title } = props.service
     return (
         <div>
-            <div class="">
-                <div class="col">
-                    <div class="card h-100 border-0 shadow">
+            <div>
+                <div className="col">
+                    <div className="card h-100 border-0 shadow">
                     <img className='d-flex justify-content-center' src={img} alt=""  height='240px'/>
-                        <div class="card-body">
-                            <h5 class="card-title ps-3 text-info fw-bold">{name}</h5>
-                            <p class="card-text p-3">{title.slice(0, 150)}...</p>
+                        <div className="card-body">
+                            <h5 className="card-title ps-3 text-info fw-bold">{name}</h5>
+                            <p className="card-text p-3">{title.slice(0, 150)}...</p>
                         </div>
                         <div className='ps-3 pb-3'>
                         <Link to={`/booking/:${id}`}>

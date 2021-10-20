@@ -10,7 +10,7 @@ const About = () => {
             <div className='text-center'>
 
                 <div className='about-us'>
-                    <h1 className="About">About Me</h1>
+                    <h1 className="About text-center">About Me</h1>
                     <div className='container'>
                     <h3 className='pt-3'>WHO WE ARE</h3>
                     <hr />

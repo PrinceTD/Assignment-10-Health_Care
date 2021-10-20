@@ -4,22 +4,21 @@ import Header from '../page/Header';
 
 const SingleService = () => {
     const { serviceId } = useParams();
-    const [data, setData] = useState([]);
+    const [serviceData, setServiceData] = useState([]);
     useEffect(() => {
-        fetch(`/fackData.JSON`)
-            .then(res => res.json())
-            .then(data => setData(data))
-    }, [])
-const extraData =  data.filter(booking => booking.id === serviceId)
-console.log(extraData);
+    fetch('/fackData.json')
+        .then(res=>res.json())
+        .then(data => setServiceData(data))
+    }, []);
+    const extraData = serviceData.filter(td => td._id == serviceId);
+    console.log(extraData);
+
     return (
 
         <div>
             <Header></Header>
             <div className="container">
-                {
-                   
-                }
+                <p>this is {serviceId}</p>
             </div>
 
         </div>

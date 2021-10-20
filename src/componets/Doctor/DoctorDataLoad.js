@@ -5,11 +5,11 @@ const DoctorDataLoad = (props) => {
     return (
         <div>
 
-            <div class="col">
-                <div class="card h-100 border-0 shadow">
+            <div className="col">
+                <div className="card h-100 border-0 shadow">
                     <img src={img} height='300px' alt="" />
-                    <div class="card-body">
-                        <h5 class="card-title">{name}</h5>
+                    <div className="card-body">
+                        <h5 className="card-title">{name}</h5>
                         <p className='text-success'>{expart}</p>
                     </div>
                 </div>

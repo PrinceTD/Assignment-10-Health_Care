@@ -19,7 +19,7 @@ const NewBanner = () => {
                         </p>
                     </div>
                     <div className="col-md-7 ps-5 text-center">
-                        <img src={banner} alt="" height="450px" width='400px' />
+                        <img src={banner} alt="" height="430px" width='400px' />
                     </div>
                 </div>
             </div>

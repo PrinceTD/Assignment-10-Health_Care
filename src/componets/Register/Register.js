@@ -74,7 +74,7 @@ const Register = () => {
     }
 
     return (
-        <div className=''>
+        <div >
             <Header></Header>
             <div className='text-center m-5 p-5 bg-light '>
                 <h3>Please {isLogin ? 'logIn' : "Register"}</h3>
